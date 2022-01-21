@@ -1,0 +1,17 @@
+<%= form_with(model: sound_pack) do |form| %>
+  <% if sound_pack.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(sound_pack.errors.count, "error") %> prohibited this sound_pack from being saved:</h2>
+
+      <ul>
+        <% sound_pack.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @sound_pack %>
+
+<div>
+  <%= link_to "Edit this sound pack", edit_sound_pack_path(@sound_pack) %> |
+  <%= link_to "Back to sound packs", sound_packs_path %>
+
+  <%= button_to "Destroy this sound pack", @sound_pack, method: :delete %>
+</div>
