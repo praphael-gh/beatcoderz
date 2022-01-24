@@ -13,6 +13,11 @@ class SoundPacksController < ApplicationController
     render json: selected_soundpack, status: :ok
   end
 
+  def create
+    new_pack = SoundPack.create(sound_pack_params)
+    render json: new_pack, status: :created
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

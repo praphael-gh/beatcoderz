@@ -9,6 +9,7 @@ import AudioUpload from './AudioUpload';
 
 function App() {
   const [user, setUser] = useState(null)
+  const [soundPacks, setSoundPacks] = useState([])
 
   useEffect(() => {
     fetch("/me").then((response) => {
@@ -18,6 +19,12 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    fetch('/sound_packs')
+    .then(resp => resp.json())
+    .then(data => setSoundPacks(data))
+  },[])
+
   if (user) { 
     return (
     <div className="App" >
@@ -25,7 +32,7 @@ function App() {
       <Routes>
         <Route path = '/'
         element = {
-          <Home />
+          <Home soundPacks={soundPacks} setSoundPacks={setSoundPacks}/>
         } 
         />
 
@@ -37,7 +44,7 @@ function App() {
 
         <Route path = '/upload-audio'
         element={
-          <AudioUpload user={user}/>
+          <AudioUpload user={user} soundPacks={soundPacks} setSoundPacks={setSoundPacks}/>
         }
         />
 

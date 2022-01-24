@@ -41,6 +41,6 @@ class SoundsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sound_params
-      params.permit(:name, :audio)
+      params.permit(:name, :audio, :user_id, :sound_pack_id)
     end
 end

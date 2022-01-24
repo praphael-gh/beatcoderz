@@ -1,6 +1,6 @@
 import "./BeatButtons.css";
 
-function BeatButtons({ sounds, audioArray, setAudioArray }) {
+function BeatButtons({ audioArray, setAudioArray }) {
   let volume = 4;
 
   function play(e) {
@@ -38,15 +38,11 @@ function BeatButtons({ sounds, audioArray, setAudioArray }) {
   function keyPlay(e) {
     let i = parseInt(e.key);
 
-    let keyAudioPlay = new Audio(sounds[i].sound);
-    setAudioArray([...audioArray, keyAudioPlay]);
+    let keyAudioPlay = new Audio(audioArray[i].audio_url);
+    console.log(audioArray[i].audio_url)
+    // setAudioArray([...audioArray, keyAudioPlay]);
     // keyAudioPlay.volume = parseFloat(e.target.children[1].value / 10)
     keyAudioPlay.play();
-  }
-
-  const examplePlay = (url) => {
-    let audioNew = new Audio(url)
-    audioNew.play()
   }
 
   console.log(audioArray)
