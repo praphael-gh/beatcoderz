@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2022_01_20_151629) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -49,8 +52,8 @@ ActiveRecord::Schema.define(version: 2022_01_20_151629) do
 
   create_table "sounds", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
-    t.integer "sound_pack_id"
+    t.bigint "user_id"
+    t.bigint "sound_pack_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["sound_pack_id"], name: "index_sounds_on_sound_pack_id"
