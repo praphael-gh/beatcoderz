@@ -13,6 +13,8 @@ module Beatcoderz
 
     # Configuration for the application, engines, and railties goes here.
     ActionDispatch::Session::CookieStore
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
     config.action_dispatch.cookies_same_site_protection = :strict
 
     # These settings can be overridden in specific environments using the files
