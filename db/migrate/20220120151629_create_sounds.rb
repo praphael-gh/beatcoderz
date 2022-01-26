@@ -5,7 +5,6 @@ class CreateSounds < ActiveRecord::Migration[7.0]
 
       t.references :user, :sound_pack
 
-
       t.timestamps
     end
   end
