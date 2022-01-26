@@ -1,4 +1,4 @@
-class SoundPacksController < ApplicationController
+class Api::SoundPacksController < ApplicationController
   before_action :set_sound_pack, only: %i[ show edit update destroy ]
 
   # GET /sound_packs or /sound_packs.json
