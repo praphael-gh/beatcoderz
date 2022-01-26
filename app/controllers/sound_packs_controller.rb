@@ -1,4 +1,4 @@
-class API::SoundPacksController < ApplicationController
+class SoundPacksController < ApplicationController
   before_action :set_sound_pack, only: %i[ show edit update destroy ]
 
   # GET /sound_packs or /sound_packs.json
@@ -27,6 +27,6 @@ class API::SoundPacksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sound_pack_params
-      params.permit(:id, :name, :genre)
+      params.permit(:name, :genre)
     end
 end
