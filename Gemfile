@@ -7,7 +7,7 @@ gem "thread_safe"
 
 gem "active_model_serializers"
 
-gem "pg"
+gem "pg", "~> 1.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rack-cors', :require => 'rack/cors'

@@ -54,7 +54,7 @@ test:
 #   encoding: unicode
 #   database: postgres
 #   pool: 5
-#   username: sousman 
+#   username:  
 #   timeout: 5000
 production:
   <<: *default
