@@ -10,19 +10,12 @@ function Home({soundPacks, setSoundPacks}) {
 
       // // Sounds from Songs (default 'lofi')
   useEffect(() => {
-    fetch(`/sound_packs/${selectedSoundPack}`)
+    fetch(`/api/sound_packs/${selectedSoundPack}`)
     .then(resp => resp.json())
     .then((data) => {
       setAudioArray(data.sounds)
     })
   }, [selectedSoundPack])
-
-  // useEffect(() => {
-  //   fetch(`http://[::1]:4000/sounds/1`)
-  //   .then(resp => resp.json())
-  //   .then()
-  // }
-
 
     return (
     <div className="home">

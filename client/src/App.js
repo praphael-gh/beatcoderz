@@ -12,7 +12,7 @@ function App() {
   const [soundPacks, setSoundPacks] = useState([])
 
   useEffect(() => {
-    fetch("/me").then((response) => {
+    fetch("/api/me").then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
       }
@@ -20,7 +20,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    fetch('/sound_packs')
+    fetch('/api/sound_packs')
     .then(resp => resp.json())
     .then(data => setSoundPacks(data))
   },[])

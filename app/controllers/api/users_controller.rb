@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  # before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
   def index
@@ -9,7 +9,8 @@ class Api::UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    selected_user = User.find(params[:id])
+    # byebug
+    selected_user = User.find_by(id: session[:user_id])
     render json: selected_user, status: :ok
   end
 
@@ -22,7 +23,7 @@ class Api::UsersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      user = User.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

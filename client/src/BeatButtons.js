@@ -9,7 +9,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
     // audioPlay.load()
     // debugger
     // console.log(audioPlay)
-
+    // console.log(audioPlay)
     audioPlay.cloneNode().play()
     // let audioPlay = new Audio(e.target.value);
     // audioPlay.volume = parseFloat(e.target.children[1].value / 10);
@@ -25,15 +25,12 @@ function BeatButtons({ audioArray, setAudioArray }) {
     // console.log(audioArray);
   }
 
-  function pause() {
-    // for i in audioArray,
-    // i.pause()
-    // for (let i = 0; i < audioArray.length; i++) {
-    //   audioArray[i].pause();
-    //   setAudioArray([]);
-    // }
+  // function pause(e) {
+  //   let pauseAudio = document.getElementById(e.target.value)
+  //   // console.log(pauseAudio)
+  //   pauseAudio.pause()
 
-  }
+  // }
 
   function keyPlay(e) {
     let i = parseInt(e.key);
@@ -49,9 +46,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
 
   return (
     <div className="button-container" onKeyDown={(e) => keyPlay(e)}>
-      <button id="pause" onClick={() => pause()}>
-        Pause All Tracks
-      </button>
+      
       {audioArray.map((sound) => {
         return (
           <div key={sound.id} className="beatbutton">
@@ -65,7 +60,9 @@ function BeatButtons({ audioArray, setAudioArray }) {
                 placeholder="Volume (1 ...)"
                 defaultValue={volume}
               />
+              {/* <button id="pause" value={sound.name} onClick={(e) => pause(e)}>Pause All Tracks</button> */}
             </button>
+            
           </div>
         );
       })}

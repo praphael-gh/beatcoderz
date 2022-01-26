@@ -1,13 +1,12 @@
 class ApplicationController < ActionController::API
-
-    include ActionController::Cookies
-    skip_before_action :verify_authenticity_token
-
+    
+    # protect_from_forgery with: :exception
+    
     include ActionController::Cookies
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :record_invalid
 
-
+    # skip_before_action :verify_authenticity_token
 private
   
     def record_invalid(invalid)
