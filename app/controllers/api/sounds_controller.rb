@@ -10,9 +10,8 @@ class Api::SoundsController < ApplicationController
   # GET /sounds/1 or /sounds/1.json
   def show
     selected_sound = Sound.find(params[:id])
-    render json: {audio_url: featured_audio(selected_sound)}
+    render json: selected_sound
   end
-
 
   # POST /sounds or /sounds.json
   def create
