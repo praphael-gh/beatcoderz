@@ -21,4 +21,4 @@ sound6 = Sound.create(name:"synth_snare2", user_id: 1, sound_pack_id: 2, audio_d
 
 sound7 = Sound.create(name:"synth_hat2", user_id: 1, sound_pack_id: 2, audio_data: Base64.encode64(File.read(Rails.root.to_s + '/public/sound_files/hat2.wav')))
 
-sound8 = Sound.create(name:"synth2", user_id: 1, sound_pack_id: 2, audio_data: Base64.encode64(File.read(Rails.root.to_s + '/public/sound_files/synth2.wav')))
+sound8 = Sound.create(name:"perc2", user_id: 1, sound_pack_id: 2, audio_data: Base64.encode64(File.read(Rails.root.to_s + '/public/sound_files/perc2.wav')))

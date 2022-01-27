@@ -1,7 +1,7 @@
 import "./BeatButtons.css";
 
 function BeatButtons({ audioArray, setAudioArray }) {
-  let volume = 4;
+  let volume = 5;
 
   function play(e) {
     let audioPlay = new Audio(e.target.value);
@@ -9,10 +9,14 @@ function BeatButtons({ audioArray, setAudioArray }) {
     audioPlay.play()
   }
 
-  function pause(e) {
-    let pauseAudio = e.parentNode.children[1].children[0].children[0]
-    console.log(pauseAudio)
-  }
+  // function pause() {
+  //   for (let i = 0; i < audioArray.length; i++) {
+  //     document.getElementById(audioArray[i].name).pause()
+  //     // console.log(pauseAudio)
+  //     // pauseAudio.pause()
+  //   }
+    
+  // }
 
   function keyPlay(e) {
     let i = parseInt(e.key);
@@ -20,17 +24,17 @@ function BeatButtons({ audioArray, setAudioArray }) {
     let keyAudioPlay = new Audio(audioArray[i].audio_url);
     // console.log(audioArray[i].audio_url)
     // setAudioArray([...audioArray, keyAudioPlay]);
-    // keyAudioPlay.volume = parseFloat(e.target.children[1].value / 10)
+    keyAudioPlay.volume = parseFloat(e.target.children[2].value / 10)
     // keyAudioPlay.load()
     console.log(audioArray)
     keyAudioPlay.play();
   }
 
-  console.log(audioArray)
+  // console.log(audioArray)
 
   return (
     <div className="button-container" onKeyDown={(e) => keyPlay(e)}>
-      <button id="pause" onClick={() => pause()}>Pause All Tracks</button>
+      {/* <button id="pause" onClick={() => pause()}>Pause All Tracks</button> */}
       {audioArray.map((sound) => {
         return (
           <div key={sound.id} className="beatbutton">
