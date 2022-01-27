@@ -8,7 +8,7 @@ const LogIn = ({onLogin}) => {
     // const [newPassword, setNewPassword] = useState("")
 
     function handleSubmit(e) {
-        e.preventDefault();
+        // e.preventDefault();
         fetch("/login", {
           method: "POST",
           headers: {
