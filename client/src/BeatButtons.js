@@ -10,7 +10,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
   }
 
   function pause(e) {
-    let pauseAudio = e.target.children[0]
+    let pauseAudio = e.parentNode.children[1].children[0].children[0]
     console.log(pauseAudio)
   }
 
