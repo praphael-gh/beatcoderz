@@ -6,10 +6,10 @@ function BeatButtons({ audioArray, setAudioArray }) {
   function play(e) {
     let audioPlay = new Audio(e.target.value);
     // console.log(audioPlay)
-    audioPlay.volume = parseFloat(e.target.children[1].value / 10);
-    console.log(e.target.children[1].value / 10)
-    setAudioArray([...audioArray, audioPlay]);
+    audioPlay.volume = (e.target.children[2].value / 10)
+    // console.log((e.target.children[2].value / 10))
     audioPlay.play();
+    // setAudioArray([...audioArray, audioPlay]);
     // console.log(audioArray);
   }
 
@@ -24,6 +24,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
     let i = parseInt(e.key);
 
     let keyAudioPlay = new Audio(audioArray[i].audio_url);
+    keyAudioPlay.volume = (e.target.children[2].value / 10)
     // console.log(audioArray[i].audio_url)
     // setAudioArray([...audioArray, keyAudioPlay]);
     // keyAudioPlay.volume = parseFloat(e.target.children[1].value / 10)
