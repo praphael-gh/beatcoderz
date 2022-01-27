@@ -3,5 +3,3 @@ Aws.config[:credentials] = Aws::Credentials.new(
   ENV['BUCKETEER_AWS_SECRET_ACCESS_KEY']
 )
 Aws.config[:region]      = 'us-east-1'
-
-S3 = Aws::S3::Client.n
