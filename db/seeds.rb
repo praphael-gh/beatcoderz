@@ -3,6 +3,8 @@ user1 = User.create(username:"Joe")
 song1 = SoundPack.create(name:"lofi", genre:"lofi")
 song2 = SoundPack.create(name:"Synthwave", genre: "Synthwave")
 
+Sound.destroy_all
+
 # # lofi sounds
 sound1 = Sound.create(name:"lofi_kick1", user_id: 1, sound_pack_id: 1)
 sound1.audio.attach(
