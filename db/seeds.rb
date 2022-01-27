@@ -6,12 +6,12 @@ song2 = SoundPack.create(name:"Synthwave", genre: "Synthwave")
 # # lofi sounds
 sound1 = Sound.create(name:"lofi_kick1", user_id: 1, sound_pack_id: 1)
 sound1.audio.attach(
-    io: File.open('../client/public/sound_files/kick1.wav'),
+    io: File.open('~/client/public/sound_files/kick1.wav'),
     filename: 'kick1.wav'
   )
 sound2 = Sound.create(name:"lofi_snare1", user_id: 1, sound_pack_id: 1)
 sound2.audio.attach(
-    io: File.open('../public/sound_files/snare1.wav'),
+    io: File.open('~/client/public/sound_files/snare1.wav'),
     filename: 'snare1.wav'
   )
 sound3 = Sound.create(name:"lofi_hat1", user_id: 1, sound_pack_id: 1)
