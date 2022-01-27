@@ -7,7 +7,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
     let audioPlay = new Audio(e.target.value);
     audioPlay.volume = parseFloat(e.target.children[2].value / 10);
     audioPlay.play()
-    console.log(e.target.value)
+    // console.log(e.target.value)
     // debugger
   }
 
