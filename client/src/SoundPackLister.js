@@ -2,10 +2,10 @@ import './SoundPackLister.css'
 
 function SoundPackLister ({soundPacks, selectedSoundPack, setSelectedSoundPack}) {
 // console.log(soundPacks)
+    // setSelectedSoundPack(1)
 
     const handleSelectedSoundPackClick = (id) => {
         setSelectedSoundPack(id)
-
     }
     return (
         

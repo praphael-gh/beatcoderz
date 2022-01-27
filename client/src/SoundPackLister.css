@@ -1,18 +1,25 @@
-.song-lister {
+#song-lister {
+    justify-content: center;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+    gap: 10px 20px; /* row-gap column gap */
+    row-gap: 10px;
+    column-gap: 20px;
 
 }
 
 .song-box {
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: column; */
+    align-content: center;
+    /* display: grid; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* flex-direction: column; */
     width: 20%;
+    /* height: 50px; */
     border-style:solid;
     padding: 5px;
-    margin:5px
+    margin:5px;
 }
 
 .selected {

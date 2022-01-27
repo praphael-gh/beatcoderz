@@ -1,21 +1,28 @@
+.button-container {
+    justify-content: center;
+    display: flex;
+    margin-top: 10px;
+    gap: 5px;
+    gap: 5px 5px; /* row-gap column gap */
+    row-gap: 5px;
+    column-gap: 5px;
+    margin: 10px;
+
+}
+
 .beatbutton > button {
     border-style:solid;
     border-radius: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
     background-color: rgb(255, 255, 255);
     margin: 5px;
     padding: 10px;
-    width: 100px;
-    /* height: 20px; */
+    width: 120px;
+    height: 100px;
 }
 
 input[type=number] {
     width: 40%;
 }
 
-.button-container {
-    margin: 10px;
-}
+
 

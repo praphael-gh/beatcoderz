@@ -27,6 +27,6 @@ class Api::SoundPacksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sound_pack_params
-      params.permit(:name, :genre)
+      params.permit(:id, :name, :genre)
     end
 end

@@ -1,3 +1,4 @@
+// import { parseFile } from "aws-sdk/lib/shared-ini/ini-loader";
 import { useState } from "react";
 
 function AudioUpload({ user, soundPacks, setSoundPacks}) {
@@ -13,7 +14,7 @@ function AudioUpload({ user, soundPacks, setSoundPacks}) {
 
     const formData = new FormData();
     formData.append("name", name);
-    formData.append("audio", audio);
+    formData.append("audio_data", audio);
     formData.append("user_id", user.id)
     formData.append('sound_pack_id', soundPackId)
 
@@ -29,8 +30,7 @@ function AudioUpload({ user, soundPacks, setSoundPacks}) {
     const formData = new FormData();
     formData.append("name", soundPackName);
     formData.append("genre", soundPackGenre);
-    // formData.append('user_id', user.id)
-    // formData.append('sound_pack_id', )
+
 
     fetch("/api/sound_packs", {
       method: "POST",
@@ -72,7 +72,7 @@ function AudioUpload({ user, soundPacks, setSoundPacks}) {
           />
           <input 
             type="file" 
-            onChange={(e) => setAudio(e.target.files[0])} 
+            onChange={(e) => setAudio(e.target.files[0])}
           />
           <br/>
           <label for="soundpack-select">Choose a Soundpack:</label>

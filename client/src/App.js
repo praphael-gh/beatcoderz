@@ -6,6 +6,7 @@ import Home from './Home'
 import { useState, useEffect } from 'react'
 import { Routes, Route } from "react-router-dom";
 import AudioUpload from './AudioUpload';
+import About from './About'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -32,13 +33,20 @@ function App() {
       <Routes>
         <Route path = '/'
         element = {
-          <Home soundPacks={soundPacks} setSoundPacks={setSoundPacks}/>
+          <div id='app-home'>
+            <Home soundPacks={soundPacks} setSoundPacks={setSoundPacks}/>
+          </div>
+          
         } 
         />
 
         <Route path = '/about'
         element={
-          <h1>About</h1>
+          <div id="about">
+            <h1>About</h1>
+            <About />
+          </div>
+          
         }
         />
 
@@ -55,7 +63,7 @@ function App() {
 } else {
   return (
       <div id="Login">
-      <h1>BeatCoder</h1>
+      <h1>Welcome to BeatCoder!</h1>
       <LogIn onLogin={setUser} />
       </div>
   )}

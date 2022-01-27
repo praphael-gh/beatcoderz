@@ -15,6 +15,7 @@ class Api::SoundsController < ApplicationController
 
   # POST /sounds or /sounds.json
   def create
+    # byebug
     new_audio = Sound.create(sound_params)
     render json: { new_audio: new_audio }
   end
@@ -40,6 +41,6 @@ class Api::SoundsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sound_params
-      params.permit(:name, :audio, :user_id, :sound_pack_id)
+      params.permit(:name, :audio_data, :user_id, :sound_pack_id)
     end
 end

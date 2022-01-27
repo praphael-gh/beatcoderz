@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"  
-// import './NavBar.css'
+import './NavBar.css'
 
 function NavBar({onLogout}) {
 
@@ -16,10 +16,11 @@ function NavBar({onLogout}) {
         flex: "1",
         flexDirection: "row",
         justifyContent: "center",
+        borderRadius:"5%",
         // width: "75px",
         // height: "75px",
         padding: "12px",
-        margin: "30px 10px",
+        margin: "30px 20px",
         background: "green",
         textDecoration: "none",
         color: "white",

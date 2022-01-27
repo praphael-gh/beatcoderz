@@ -8,7 +8,9 @@ class SoundSerializer < ActiveModel::Serializer
   # end
   
   def audio_url
-    audio_data = "data:audio/wav; base64, " + (object.audio_data).to_s
+    # byebug
+    audio_file = object.audio_data
+    audio_data = "data:audio/wav; base64, " + audio_file
     return audio_data
   end
 end
