@@ -9,11 +9,9 @@ function BeatButtons({ audioArray, setAudioArray }) {
     audioPlay.play()
   }
 
-  function pause() {
-    for (let i = 0; i < audioArray.length; i++) {
-      audioArray[i].pause()
-      setAudioArray([])
-    }
+  function pause(e) {
+    let pauseAudio = e.target.children[0]
+    console.log(pauseAudio)
   }
 
   function keyPlay(e) {
@@ -24,6 +22,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
     // setAudioArray([...audioArray, keyAudioPlay]);
     // keyAudioPlay.volume = parseFloat(e.target.children[1].value / 10)
     // keyAudioPlay.load()
+    console.log(audioArray)
     keyAudioPlay.play();
   }
 
