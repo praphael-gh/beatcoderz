@@ -6,14 +6,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
   function play(e) {
     let audioPlay = new Audio(e.target.value);
     audioPlay.volume = parseFloat(e.target.children[2].value / 10);
-
-    if (audioPlay.src === audioArray.includes(audioPlay.src)) {
-      audioPlay.play();
-    } else {
-      setAudioArray([...audioArray, audioPlay]);
-      audioPlay.play();
-    }
-    // console.log(audioArray);
+    audioPlay.play()
   }
 
   function pause() {
@@ -38,7 +31,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
 
   return (
     <div className="button-container" onKeyDown={(e) => keyPlay(e)}>
-      <button id="pause" value={sound.name} onClick={() => pause()}>Pause All Tracks</button>
+      <button id="pause" onClick={() => pause()}>Pause All Tracks</button>
       {audioArray.map((sound) => {
         return (
           <div key={sound.id} className="beatbutton">
