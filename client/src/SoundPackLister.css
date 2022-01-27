@@ -1,4 +1,16 @@
 .song-lister {
-    border-style: dashed;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 
+}
+
+.song-box {
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; */
+    width: 20%;
+    border-style:solid;
+    padding: 5px;
+    margin:5px
 }

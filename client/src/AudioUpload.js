@@ -17,7 +17,7 @@ function AudioUpload({ user, soundPacks, setSoundPacks}) {
     formData.append("user_id", user.id)
     formData.append('sound_pack_id', soundPackId)
 
-    fetch("/sounds", {
+    fetch("/api/sounds", {
       method: "POST",
       body: formData,
     });
@@ -32,7 +32,7 @@ function AudioUpload({ user, soundPacks, setSoundPacks}) {
     // formData.append('user_id', user.id)
     // formData.append('sound_pack_id', )
 
-    fetch("/sound_packs", {
+    fetch("/api/sound_packs", {
       method: "POST",
       body: formData,
     });
