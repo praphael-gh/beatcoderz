@@ -1,15 +1,23 @@
 // import { parseFile } from "aws-sdk/lib/shared-ini/ini-loader";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import './AudioUpload.css'
 
-function AudioUpload({ user, soundPacks, setSoundPacks}) {
+function AudioUpload({ user }) {
+  const [soundPacks, setSoundPacks] = useState([])
   const [name, setName] = useState("");
   const [audio, setAudio] = useState(null);
   const [soundPackId, setSoundPackId] = useState(1)
   //   const audioUpload = useRef()
   const [soundPackName, setSoundPackName] = useState('');
   const [soundPackGenre, setSoundPackGenre] = useState('');
+  
+
+  useEffect(() => {
+    fetch('/api/sound_packs')
+    .then(resp => resp.json())
+    .then(data => setSoundPacks(data))
+  },[])
 
   const handleAudioSubmit = (e) => {
     e.preventDefault();

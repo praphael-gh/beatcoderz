@@ -10,7 +10,6 @@ import About from './About'
 
 function App() {
   const [user, setUser] = useState(null)
-  const [soundPacks, setSoundPacks] = useState([])
 
   useEffect(() => {
     fetch("/api/me").then((response) => {
@@ -20,11 +19,6 @@ function App() {
     });
   },[]);
 
-  useEffect(() => {
-    fetch('/api/sound_packs')
-    .then(resp => resp.json())
-    .then(data => setSoundPacks(data))
-  },[])
 
   if (user) { 
     return (
@@ -34,7 +28,7 @@ function App() {
         <Route path = '/'
         element = {
           <div id='app-home'>
-            <Home soundPacks={soundPacks} setSoundPacks={setSoundPacks}/>
+            <Home />
           </div>
           
         } 
@@ -52,7 +46,7 @@ function App() {
 
         <Route path = '/upload-audio'
         element={
-          <AudioUpload user={user} soundPacks={soundPacks} setSoundPacks={setSoundPacks}/>
+          <AudioUpload user={user}/>
         }
         />
 

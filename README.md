@@ -1,7 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello! Welcome to BeatCoder, an app developed by me (Pierce Raphael).
+I developed this app for my final project at Flatiron coding bootcamp, please enjoy!
+
+In order to run this application locally, ensure that all the proper dependancies are installed for Rails Version 2.7.4, as well as for ActiveStorage.
+This application relies on ActiveStorage to seed and store audio files, and uses a JavaScript React frontend to render audio elements sourced from the backend.
 
 Things you may want to cover:
 

@@ -18,10 +18,10 @@ class Api::SoundPacksController < ApplicationController
     render json: new_pack, status: :created
   end
 
-  def delete
+  def destroy
     selected_pack = SoundPack.find(params[:id])
-    destroyed_pack = selected_sound.destroy
-    render json: destroyed_pack, status: :not_found
+    destroyed_pack = selected_pack.destroy
+    render json: selected_pack, status: :not_found
   end
 
 

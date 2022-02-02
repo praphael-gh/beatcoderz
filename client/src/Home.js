@@ -19,7 +19,7 @@ function Home({soundPacks, setSoundPacks}) {
 
     return (
     <div className="home">
-    <SoundPackLister audioArray={audioArray} setAudioArray={setAudioArray} soundPacks={soundPacks} selectedSoundPack={selectedSoundPack} setSelectedSoundPack={setSelectedSoundPack} />
+    <SoundPackLister setSelectedSoundPack={setSelectedSoundPack} />
     <div id="blackbox" >
         <BeatButtons audioArray={audioArray} setAudioArray={setAudioArray}/>
     </div>

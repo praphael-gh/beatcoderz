@@ -1,8 +1,16 @@
+import { useState, useEffect } from 'react'
 import './SoundPackLister.css'
 
-function SoundPackLister ({soundPacks, selectedSoundPack, setSelectedSoundPack}) {
+function SoundPackLister ({ setSelectedSoundPack  }) {
 // console.log(soundPacks)
     // setSelectedSoundPack(1)
+    const [listerSoundPacks, setListerSoundPacks] = useState([])
+
+    useEffect(() => {
+        fetch('/api/sound_packs')
+        .then(resp => resp.json())
+        .then(data => setListerSoundPacks(data))
+      },[])
 
     const handleSelectedSoundPackClick = (id) => {
         setSelectedSoundPack(id)
@@ -22,13 +30,13 @@ function SoundPackLister ({soundPacks, selectedSoundPack, setSelectedSoundPack})
     return (
         
         <div id="song-lister">
-            {soundPacks.map(soundPack => {
+            {listerSoundPacks.map(soundPack => {
                 return (
                     <div key={soundPack.id} id={soundPack.id} className='song-box'
                     onClick={() => handleSelectedSoundPackClick(soundPack.id)}>
                         <h2>Soundpack Name: {soundPack.name}</h2>
                         <h2>Genre: {soundPack.genre}</h2>
-                        <button value={soundPack.id} onClick={(e) => handleSoundPackDelete(e)}>Delete Pack</button>
+                        <button value={soundPack.id} onClickCapture={(e) => handleSoundPackDelete(e)}>Delete Pack</button>
                     </div>
                 )
             })}

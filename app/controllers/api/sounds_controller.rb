@@ -15,8 +15,10 @@ class Api::SoundsController < ApplicationController
 
   # POST /sounds or /sounds.json
   def create
-    # byebug
-    new_audio = Sound.create(sound_params)
+    file_data = sound_params[:audio_data]
+    file = file_data.tempfile.open.read.force_encoding(Encoding::UTF_8)
+    encoded_file = Base64.encode64(file)
+    new_audio = Sound.create(name: sound_params[:name], audio_data: encoded_file, user_id: sound_params[:user_id], sound_pack_id: sound_params[:sound_pack_id])
     render json: { new_audio: new_audio }
   end
 
