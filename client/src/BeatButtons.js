@@ -28,7 +28,7 @@ function BeatButtons({ audioArray, setAudioArray }) {
     // setAudioArray([...audioArray, keyAudioPlay]);
     keyAudioPlay.volume = parseFloat(e.target.children[2].value / 10)
     // keyAudioPlay.load()
-    console.log(audioArray)
+    // console.log(audioArray)
     keyAudioPlay.play();
   }
 

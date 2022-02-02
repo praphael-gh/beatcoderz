@@ -18,6 +18,12 @@ class Api::SoundPacksController < ApplicationController
     render json: new_pack, status: :created
   end
 
+  def delete
+    selected_pack = SoundPack.find(params[:id])
+    destroyed_pack = selected_sound.destroy
+    render json: destroyed_pack, status: :not_found
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

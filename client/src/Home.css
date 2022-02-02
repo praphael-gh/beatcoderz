@@ -1,3 +1,7 @@
 #blackbox {
-    padding: 10px
+    text-align: center;
+    padding: 10px;
+    margin-inline: 550px;
+    border-radius: 1%;
+    /* width: 75%; */
 }

@@ -18,7 +18,7 @@ function App() {
         response.json().then((user) => setUser(user));
       }
     });
-  }, []);
+  },[]);
 
   useEffect(() => {
     fetch('/api/sound_packs')

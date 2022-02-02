@@ -1,6 +1,8 @@
 // import { parseFile } from "aws-sdk/lib/shared-ini/ini-loader";
 import { useState } from "react";
 
+import './AudioUpload.css'
+
 function AudioUpload({ user, soundPacks, setSoundPacks}) {
   const [name, setName] = useState("");
   const [audio, setAudio] = useState(null);
@@ -48,14 +50,14 @@ function AudioUpload({ user, soundPacks, setSoundPacks}) {
             onChange={(e) => setSoundPackName(e.target.value)}
             value={soundPackName}
           />
-
+          <br/>
           <input 
             type="text" 
             placeholder="Soundpack Genre"
             onChange={(e) => setSoundPackGenre(e.target.value)}
             value={soundPackGenre}
           />
-
+          <br/>
           <input
             type="submit"
             value="Submit"
@@ -74,7 +76,6 @@ function AudioUpload({ user, soundPacks, setSoundPacks}) {
             type="file" 
             onChange={(e) => setAudio(e.target.files[0])}
           />
-          <br/>
           <label for="soundpack-select">Choose a Soundpack:</label>
           <select id='soundpack-select' name='Soundpacks' onChange={(e) => setSoundPackId(e.target.value)}>
             {soundPacks.map((soundPack) => {
