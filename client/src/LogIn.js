@@ -3,9 +3,9 @@ import { useState } from 'react'
 
 const LogIn = ({onLogin}) => {
     const [username, setUsername] = useState("")
-    // const [password, setPassword] = useState("")
+    const [password, setPassword] = useState("")
     const [newUsername, setNewUsername] = useState("")
-    // const [newPassword, setNewPassword] = useState("")
+    const [newPassword, setNewPassword] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -15,7 +15,7 @@ const LogIn = ({onLogin}) => {
             "Content-Type": "application/json",
             'Accept': 'application/json',
           },
-          body: JSON.stringify({ username }),
+          body: JSON.stringify({ username, password }),
         })
         .then((r) => {
             if (r.ok) {
@@ -28,7 +28,7 @@ const LogIn = ({onLogin}) => {
         event.preventDefault()
         const formData = {
             username: newUsername,
-            // password: newPassword
+            password: newPassword
         }
         fetch('/api/users', {
             method: 'POST',
@@ -37,7 +37,7 @@ const LogIn = ({onLogin}) => {
         }).then(resp => resp.json())
         .then((data) => {
             setNewUsername('')
-            // setNewPassword('')
+            setNewPassword('')
         })
         // handleSubmit(event)
     }
@@ -49,14 +49,15 @@ const LogIn = ({onLogin}) => {
             <div className="login">
                 <form onSubmit={handleSubmit}>
                     <input type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)}/>
-                    {/* <input type="text" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/> */}
+                    <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                     <button type="submit">Log In</button>
                 </form>
             </div>
         <h2>Create an Account:</h2>
             <div className='create_account'> 
                 <form onSubmit={handleNewUserSubmit}>
-                    <input type="text" placeholder="Username" value={newUsername} onChange={(e) => setNewUsername(e.target.value)}/>
+                    <input type="text" placeholder="New Username" value={newUsername} onChange={(e) => setNewUsername(e.target.value)}/>
+                    <input type="password" placeholder="New Password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)}/>
                     <button type="submit">Create Account</button>
                 </form>
             </div>

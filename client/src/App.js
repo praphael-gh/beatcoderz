@@ -24,6 +24,7 @@ function App() {
     return (
     <div className="App" >
       <NavBar onLogout={setUser}/>
+      <p>Logged In User: {user.username}  </p>
       <Routes>
         <Route path = '/'
         element = {

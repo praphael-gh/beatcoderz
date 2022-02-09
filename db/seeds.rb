@@ -1,4 +1,5 @@
-user1 = User.create(username:"Joe")
+user1 = User.create(username:"Joe", password:"ya")
+user2 = User.create(username:"Moe", password:"yo")
 
 song1 = SoundPack.create(name:"lofi", genre:"lofi")
 song2 = SoundPack.create(name:"Synthwave", genre: "Synthwave")

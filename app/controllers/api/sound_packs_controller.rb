@@ -1,4 +1,6 @@
 class Api::SoundPacksController < ApplicationController
+  before_action :authorized
+  skip_before_action :authorized, only: [:index, :show, :create, :destroy]
   # before_action :set_sound_pack, only: %i[ show edit update destroy ]
 
   # GET /sound_packs or /sound_packs.json
@@ -27,6 +29,7 @@ class Api::SoundPacksController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_sound_pack
       sound_pack = SoundPack.find(params[:id])
     end

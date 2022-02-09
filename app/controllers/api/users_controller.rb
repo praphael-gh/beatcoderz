@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  skip_before_action :authorized
   # before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json

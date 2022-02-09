@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    # has_secure_password
+    has_secure_password
     has_many :sounds
     has_many :sound_packs, through: :sounds
 
