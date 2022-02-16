@@ -46,8 +46,10 @@ ActiveRecord::Schema.define(version: 2022_01_27_052414) do
   create_table "sound_packs", force: :cascade do |t|
     t.string "name"
     t.string "genre"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_sound_packs_on_user_id"
   end
 
   create_table "sounds", force: :cascade do |t|

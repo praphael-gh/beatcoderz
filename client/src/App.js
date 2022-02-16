@@ -29,7 +29,7 @@ function App() {
         <Route path = '/'
         element = {
           <div id='app-home'>
-            <Home />
+            <Home user={user}/>
           </div>
           
         } 

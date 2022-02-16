@@ -5,6 +5,8 @@ class CreateSoundPacks < ActiveRecord::Migration[7.0]
       t.string :name
       t.string :genre
 
+      t.references :user
+
       t.timestamps
     end
   end

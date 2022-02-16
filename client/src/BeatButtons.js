@@ -1,6 +1,6 @@
 import "./BeatButtons.css";
 
-function BeatButtons({ audioArray, setAudioArray }) {
+function BeatButtons({ audioArray }) {
   let volume = 5;
 
   function play(e) {
@@ -34,7 +34,8 @@ function BeatButtons({ audioArray, setAudioArray }) {
 
   // console.log(audioArray)
 
-  return (
+  if (audioArray.length > 0) {
+    return (
     <div className="button-container" onKeyDown={(e) => keyPlay(e)}>
 
       {/* <button id="pause" onClick={() => pause()}>Pause All Tracks</button> */}
@@ -60,6 +61,13 @@ function BeatButtons({ audioArray, setAudioArray }) {
       <div id="log"></div>
     </div>
   );
+  } else {
+    return (
+      <h2>No Sounds Available</h2>
+    )
+  }
+
+  
 }
 
 export default BeatButtons;

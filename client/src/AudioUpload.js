@@ -7,7 +7,7 @@ function AudioUpload({ user }) {
   const [soundPacks, setSoundPacks] = useState([])
   const [name, setName] = useState("");
   const [audio, setAudio] = useState(null);
-  const [soundPackId, setSoundPackId] = useState(1)
+  const [soundPackId, setSoundPackId] = useState()
   //   const audioUpload = useRef()
   const [soundPackName, setSoundPackName] = useState('');
   const [soundPackGenre, setSoundPackGenre] = useState('');
@@ -40,6 +40,7 @@ function AudioUpload({ user }) {
     const formData = new FormData();
     formData.append("name", soundPackName);
     formData.append("genre", soundPackGenre);
+    formData.append("user_id", user.id);
 
 
     fetch("/api/sound_packs", {

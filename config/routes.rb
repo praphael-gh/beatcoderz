@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
         
     resources :sound_packs
+    # get "/user/sound_packs", to: "sound_packs#index"
+
     resources :sounds
     resources :users
     # root 'welcome#index'

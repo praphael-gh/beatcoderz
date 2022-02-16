@@ -11,6 +11,8 @@ class ApplicationController < ActionController::API
         unless session.include? :user_id
     end
 
+    
+
     # skip_before_action :verify_authenticity_token
 private
 

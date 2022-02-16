@@ -5,13 +5,13 @@ class Api::SoundPacksController < ApplicationController
 
   # GET /sound_packs or /sound_packs.json
   def index
-    sound_packs = SoundPack.all
+    sound_packs = SoundPack.where(user_id: session[:user_id])
     render json: sound_packs, status: :ok
   end
 
   # GET /sound_packs/1 or /sound_packs/1.json
   def show
-    selected_soundpack = SoundPack.find(params[:id])
+    selected_soundpack = SoundPack.where(id:params[:id], user_id: session[:user_id])
     render json: selected_soundpack, status: :ok
   end
 
@@ -36,6 +36,6 @@ class Api::SoundPacksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sound_pack_params
-      params.permit(:id, :name, :genre)
+      params.permit(:id, :name, :genre, :user_id)
     end
 end

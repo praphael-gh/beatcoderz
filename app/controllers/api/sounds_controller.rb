@@ -5,7 +5,7 @@ class Api::SoundsController < ApplicationController
 
   # GET /sounds or /sounds.json
   def index
-    sounds = Sound.all
+    sounds = Sound.where(user_id: session[:user_id])
     render json: sounds, status: :ok
   end
 

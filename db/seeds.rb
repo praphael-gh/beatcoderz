@@ -1,8 +1,8 @@
 user1 = User.create(username:"Joe", password:"ya")
 user2 = User.create(username:"Moe", password:"yo")
 
-song1 = SoundPack.create(name:"lofi", genre:"lofi")
-song2 = SoundPack.create(name:"Synthwave", genre: "Synthwave")
+song1 = SoundPack.create(name:"lofi", genre:"lofi", user_id: User.first.id)
+song2 = SoundPack.create(name:"Synthwave", genre: "Synthwave", user_id: User.first.id)
 
 Sound.destroy_all
 
