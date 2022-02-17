@@ -3,7 +3,7 @@ User.destroy_all
 user1 = User.create(username:"Joe", password:"ya")
 user2 = User.create(username:"Moe", password:"yo")
 
-Song.destroy_all
+SoundPack.destroy_all
 
 song1 = SoundPack.create(name:"lofi", genre:"lofi", user_id: User.first.id)
 song2 = SoundPack.create(name:"Synthwave", genre: "Synthwave", user_id: User.first.id)

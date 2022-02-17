@@ -13,11 +13,12 @@ function Home({user}) {
     fetch(`/api/sound_packs/${selectedSoundPack}`)
     .then(resp => resp.json())
     .then((data) => {
-        if (data.sounds > 0) {
-          setAudioArray(data.sounds)
+        if (data[0].sounds.length > 0) {
+          setAudioArray(data[0].sounds)
         } else {
           setAudioArray([])
         }
+        console.log(data[0].sounds)
     })
   }, [selectedSoundPack])
 
