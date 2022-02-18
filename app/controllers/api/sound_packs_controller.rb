@@ -1,18 +1,40 @@
 class Api::SoundPacksController < ApplicationController
   before_action :authorized
-  skip_before_action :authorized, only: [:index, :show, :create, :destroy]
+  skip_before_action :authorized, only: [:index, :show, :default, :default_audio, :create, :destroy]
   # before_action :set_sound_pack, only: %i[ show edit update destroy ]
 
   # GET /sound_packs or /sound_packs.json
   def index
-    sound_packs = SoundPack.where(user_id: session[:user_id])
+    default_packs = SoundPack.where(user_id: User.first.id)
+    user_packs = SoundPack.where(user_id: session[:user_id])
+    sound_packs = default_packs + user_packs
     render json: sound_packs, status: :ok
   end
 
   # GET /sound_packs/1 or /sound_packs/1.json
   def show
-    selected_soundpack = SoundPack.where(id:params[:id], user_id: session[:user_id])
-    render json: selected_soundpack, status: :ok
+    default_soundpack = SoundPack.where(id:params[:id], user_id: User.first.id)
+    user_soundpack = SoundPack.where(id:params[:id], user_id: session[:user_id])
+    all_packs = default_soundpack + user_soundpack
+
+    if User.find(session[:user_id]).sound_packs.length() < 1 
+      render json: default_soundpack, status: :ok
+    elsif User.find(session[:user_id]).username === "Joe"
+      render json: default_soundpack, status: :ok
+    else
+      render json: all_packs, status: :ok
+    end
+    
+  end
+
+  def default
+    default_pack = SoundPack.where(user_id: User.first.id)
+    render json: default_pack, status: :ok
+  end
+
+  def default_audio
+    default_audio = SoundPack.where(user_id: User.first.id)
+    render json: default_audio, status: :ok
   end
 
   def create

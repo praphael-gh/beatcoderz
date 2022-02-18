@@ -1,16 +1,25 @@
 import { useState, useEffect } from "react";
 import "./SoundPackLister.css";
 
-function SoundPackLister({ setSelectedSoundPack }) {
+function SoundPackLister({ selectedSoundPack, setSelectedSoundPack }) {
   // console.log(soundPacks)
-  // setSelectedSoundPack(1)
+  // setSelectedSoundPack(1) 
   const [listerSoundPacks, setListerSoundPacks] = useState([]);
+
+
 
   useEffect(() => {
     fetch("/api/sound_packs")
       .then((resp) => resp.json())
-      .then((data) => setListerSoundPacks(data));
-  }, []);
+      .then((data) => { setListerSoundPacks(data) });
+
+      // fetch("/api/sound_packs")
+      //   .then((resp) => resp.json())
+      //   .then((data) => {
+      //     setListerSoundPacks([...defaultData, ...data])
+      //   });
+    
+  }, [selectedSoundPack]);
 
   const handleSelectedSoundPackClick = (id) => {
     setSelectedSoundPack(id);
@@ -53,9 +62,7 @@ function SoundPackLister({ setSelectedSoundPack }) {
       </div>
     );
   } else {
-      return (
-          <h2>No SoundPacks Available</h2>
-      )
+    return <h2>No SoundPacks Available</h2>;
   }
 }
 

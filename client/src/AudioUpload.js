@@ -89,7 +89,7 @@ function AudioUpload({ user }) {
           <select id='soundpack-select' name='Soundpacks' onChange={(e) => setSoundPackId(e.target.value)}>
             {soundPacks.map((soundPack) => {
               return (
-                <option value={soundPack.id}>Name: {soundPack.name} // Genre:{soundPack.genre}</option>
+                <option key={soundPack.id} value={soundPack.id}>Name: {soundPack.name} // Genre:{soundPack.genre}</option>
               )
             })}
           </select>

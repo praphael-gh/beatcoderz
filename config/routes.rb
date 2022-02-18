@@ -4,13 +4,14 @@ Rails.application.routes.draw do
     get "/me", to: "users#show"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
-        
+
     resources :sound_packs
-    # get "/user/sound_packs", to: "sound_packs#index"
+    get "/default", to: "sound_packs#default"
+    get "/default-audio", to: "sound_packs#default_audio"
 
     resources :sounds
     resources :users
-    # root 'welcome#index'
+
     get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   end
 end
