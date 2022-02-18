@@ -16,7 +16,14 @@ function AudioUpload({ user }) {
   useEffect(() => {
     fetch('/api/sound_packs')
     .then(resp => resp.json())
-    .then(data => setSoundPacks(data))
+    .then(allPacks => {
+      let soundPackArray = []
+      for (let pack = 0; pack < allPacks.length; pack++) {
+        if (allPacks[pack].user_id = user.id) {
+          setSoundPacks([...soundPackArray, allPacks[pack]])
+        }
+      }
+    })
   },[])
 
   const handleAudioSubmit = (e) => {

@@ -27,15 +27,7 @@ class Api::SoundPacksController < ApplicationController
     
   end
 
-  def default
-    default_pack = SoundPack.where(user_id: User.first.id)
-    render json: default_pack, status: :ok
-  end
-
-  def default_audio
-    default_audio = SoundPack.where(user_id: User.first.id)
-    render json: default_audio, status: :ok
-  end
+  
 
   def create
     new_pack = SoundPack.create(sound_pack_params)
