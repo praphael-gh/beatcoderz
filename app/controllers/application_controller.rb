@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-    before_action :authorized
+    # before_action :authorized
     # protect_from_forgery with: :exception
     
     include ActionController::Cookies
