@@ -1,4 +1,5 @@
 class Api::UsersController < ApplicationController
+  before_action :authorized
   skip_before_action :authorized, only: [:index, :show, :create]
   # before_action :set_user, only: %i[ show edit update destroy ]
 
