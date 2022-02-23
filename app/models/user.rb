@@ -7,5 +7,6 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     # validates :password_digest, presence: true
     
-    attr_accessor :password_digest
+    
+    # attr_accessor :password_digest
 end
