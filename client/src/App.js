@@ -25,7 +25,7 @@ function App() {
     <div className="App" >
       <NavBar onLogout={setUser}/>
       <p>Logged In User: {user.username}  </p>
-      <Routes>
+      <Routes basename="/beatcoderz">
         <Route path = '/'
         element = {
           <div id='app-home'>
