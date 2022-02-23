@@ -17,7 +17,7 @@ function Home({ user }) {
 
   // user sound_packs
   useEffect(() => {
-    fetch(`/api/sound_packs/${selectedSoundPack}`)
+    fetch(`/beatcoderz/api/sound_packs/${selectedSoundPack}`)
       .then((resp) => resp.json())
       .then((data) => {
         console.log(data)

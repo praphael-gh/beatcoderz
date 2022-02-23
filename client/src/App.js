@@ -12,7 +12,7 @@ function App() {
   const [user, setUser] = useState(null)
 
   useEffect(() => {
-    fetch("/api/me").then((response) => {
+    fetch("/beatcoderz/api/me").then((response) => {
       if (response.ok) {
         response.json().then((user) => setUser(user));
       }
@@ -25,7 +25,7 @@ function App() {
     <div className="App" >
       <NavBar onLogout={setUser}/>
       <p>Logged In User: {user.username}  </p>
-      <Routes basename="/beatcoderz">
+      <Routes basename="/beatcoder">
         <Route path = '/'
         element = {
           <div id='app-home'>
