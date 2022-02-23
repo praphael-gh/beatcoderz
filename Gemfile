@@ -1,6 +1,8 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem "actionpack", ">= 7.0.2.2"
+
 ruby "2.7.4"
 
 gem "thread_safe"
@@ -23,7 +25,7 @@ gem "sprockets-rails"
 
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem "puma", "~> 5.0"
+gem "puma", ">= 5.6.2"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
