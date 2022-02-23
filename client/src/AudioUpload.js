@@ -14,7 +14,7 @@ function AudioUpload({ user }) {
   
 
   useEffect(() => {
-    fetch('/api/sound_packs')
+    fetch('/beatcoderz/api/sound_packs')
     .then(resp => resp.json())
     .then(allPacks => {
       let soundPackArray = []

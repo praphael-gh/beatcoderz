@@ -9,7 +9,7 @@ function SoundPackLister({ selectedSoundPack, setSelectedSoundPack }) {
 
 
   useEffect(() => {
-    fetch("/api/sound_packs")
+    fetch("/beatcoderz/api/sound_packs")
       .then((resp) => resp.json())
       .then((data) => { setListerSoundPacks(data) });
 
@@ -26,7 +26,7 @@ function SoundPackLister({ selectedSoundPack, setSelectedSoundPack }) {
   };
 
   const handleSoundPackDelete = (e) => {
-    fetch(`/api/sound_packs/${e.target.value}`, {
+    fetch(`/beatcoderz/api/sound_packs/${e.target.value}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
