@@ -13,5 +13,8 @@
     "dependencies": {
         "aws-sdk": "^2.1064.0",
         "util": "^0.12.4"
+    },
+    "devDependencies": {
+        "gh-pages": "^3.2.3"
     }
 }
