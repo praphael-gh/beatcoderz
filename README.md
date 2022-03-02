@@ -8,23 +8,11 @@ FULLY DEPLOYED VERSION - https://beat-coder.herokuapp.com/
 In order to run this application locally, ensure that all the proper dependancies are installed for Rails Version 2.7.4, as well as for ActiveStorage.
 This application relies on ActiveStorage to seed and store audio files, and uses a JavaScript React frontend to render audio elements sourced from the backend.
 
-Things you may want to cover:
+To run locally after cloning - 
+1. Check that PostgreSQL is installed on your local system
+3. Start the PostgreSQL server ('sudo service postgresql start' on Ubuntu)
+4. Run rails db:create, db:migrate, then db:seed
+5. Run rails s --port 4000
+6. In a seperate Terminal, run npm start --prefix client
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # beatcoderz
