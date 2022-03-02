@@ -89,10 +89,10 @@ function AudioUpload({ user }) {
             onChange={(e) => setAudio(e.target.files[0])}
           />
           <label for="soundpack-select">Choose a Soundpack:</label>
-          <select id='soundpack-select' name='Soundpacks' onChange={(e) => setSoundPackId(e.target.value)}>
+          <select id='soundpack-select' name='Soundpacks' onClick={(e) => setSoundPackId(e.target.value)}>
             {soundPacks.map((soundPack) => {
               return (
-                <option key={soundPack.id} value={soundPack.id}>Name: {soundPack.name} // Genre:{soundPack.genre}</option>
+                <option key={soundPack.id} value={soundPack.id} >Name: {soundPack.name} // Genre:{soundPack.genre}</option>
               )
             })}
           </select>
