@@ -43,7 +43,7 @@ function SoundPackLister({ selectedSoundPack, setSelectedSoundPack }) {
           return (
             <div
               key={soundPack.id}
-              id={soundPack.id}
+              id={soundPack.name}
               className="song-box"
               onClick={() => handleSelectedSoundPackClick(soundPack.id)}
             >

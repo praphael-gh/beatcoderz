@@ -1,5 +1,5 @@
 class SoundPackSerializer < ActiveModel::Serializer
-  attributes :id, :name, :genre, :sounds
+  attributes :id, :name, :genre, :sounds, :user_id
   has_many :sounds
   belongs_to :user
 

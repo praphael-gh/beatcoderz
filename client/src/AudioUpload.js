@@ -1,4 +1,3 @@
-// import { parseFile } from "aws-sdk/lib/shared-ini/ini-loader";
 import { useState, useEffect } from "react";
 
 import './AudioUpload.css'
@@ -8,21 +7,18 @@ function AudioUpload({ user }) {
   const [name, setName] = useState("");
   const [audio, setAudio] = useState(null);
   const [soundPackId, setSoundPackId] = useState()
-  //   const audioUpload = useRef()
   const [soundPackName, setSoundPackName] = useState('');
   const [soundPackGenre, setSoundPackGenre] = useState('');
+  
   
 
   useEffect(() => {
     fetch('/api/sound_packs')
     .then(resp => resp.json())
     .then(allPacks => {
-      let soundPackArray = []
-      for (let pack = 0; pack < allPacks.length; pack++) {
-        if (allPacks[pack].user_id = user.id) {
-          setSoundPacks([...soundPackArray, allPacks[pack]])
-        }
-      }
+      let soundPackArray = allPacks.filter(pack => pack.user.id === user.id)  
+      setSoundPacks(soundPackArray)
+      
     })
   },[])
 
@@ -54,8 +50,8 @@ function AudioUpload({ user }) {
       method: "POST",
       body: formData,
     });
-  };
-
+  }; 
+  
   return (
     <div id="audio-form">
       <div className="create-soundpack">

@@ -23,8 +23,7 @@ function App() {
   if (user) { 
     return (
     <div className="App" >
-      <NavBar onLogout={setUser}/>
-      <p>Logged In User: {user.username}  </p>
+      <NavBar onLogout={setUser} user={user}/>
       <Routes>
         <Route path = '/'
         element = {

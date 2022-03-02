@@ -1,7 +1,18 @@
 #blackbox {
-    text-align: center;
-    padding: 10px;
-    margin-inline: 550px;
-    border-radius: 1%;
-    /* width: 75%; */
+    
+    display:flex;
+    flex: content;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    margin-inline: 20%;
+    border-style: solid;
+    border-radius: 5px;
 }
+
+#logged_in {
+    border-style: groove;
+    margin-inline: 35%;
+    /* width: 125px; */
+    /* top:25%; */
+  
+  }

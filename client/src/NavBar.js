@@ -2,12 +2,16 @@ import React from "react";
 import { NavLink } from "react-router-dom"  
 import './NavBar.css'
 
-function NavBar({onLogout}) {
+function NavBar({onLogout, user}) {
 
     function handleLogout() {
         fetch("/logout", {
           method: "DELETE",
-        }).then(() => onLogout());
+        }).then(() => onLogout(''));
+      }
+
+      function fullLogout() {
+          handleLogout();
       }
 
     const linkStyles = {
@@ -24,7 +28,8 @@ function NavBar({onLogout}) {
         background: "green",
         textDecoration: "none",
         color: "white",
-        fontFamily: 'Segoe UI'
+        fontFamily: "'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif",
+        fontSize: 20
     }
     return (
         <div className="navbar">
@@ -54,10 +59,11 @@ function NavBar({onLogout}) {
             to="/"
             exact
             style={linkStyles}
-            onClick={onLogout, handleLogout}
+            onClick={fullLogout}
             >
                 Log Out
             </NavLink>
+        
         </div>
     )
 }

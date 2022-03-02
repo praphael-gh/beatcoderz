@@ -1,0 +1,22 @@
+.login_page {
+    display: flexbox;
+    align-self: center;
+    border-style: solid;
+    border-radius: 5px;
+    /* width: 200px; */
+    height: 340px;
+    margin-inline:40%;
+    background-color: darkgray;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.login > form {
+    background-color: darkgray;
+}
+
+.create_account > form {
+    background-color: darkgray;
+}
+
+
