@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./SoundPackLister.css";
 
-function SoundPackLister({ selectedSoundPack, setSelectedSoundPack }) {
+function SoundPackLister({ user, selectedSoundPack, setSelectedSoundPack }) {
   // console.log(soundPacks)
   // setSelectedSoundPack(1) 
   const [listerSoundPacks, setListerSoundPacks] = useState([]);
@@ -40,7 +40,8 @@ function SoundPackLister({ selectedSoundPack, setSelectedSoundPack }) {
     return (
       <div id="song-lister">
         {listerSoundPacks.map((soundPack) => {
-          return (
+          if (soundPack.user_id === user.id) {
+            return (
             <div
               key={soundPack.id}
               id={soundPack.name}
@@ -58,6 +59,21 @@ function SoundPackLister({ selectedSoundPack, setSelectedSoundPack }) {
               </button>
             </div>
           );
+          } else {
+            return (
+              <div
+                key={soundPack.id}
+                id={soundPack.name}
+                className="song-box"
+                onClick={() => handleSelectedSoundPackClick(soundPack.id)}
+              >
+                <h2>Soundpack Name: {soundPack.name}</h2>
+                <h2>Genre: {soundPack.genre}</h2>
+                <p>Created By: {soundPack.user.username}</p>
+              </div>
+            );
+          }
+          
         })}
       </div>
     );
